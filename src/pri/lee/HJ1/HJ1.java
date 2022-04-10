@@ -16,7 +16,7 @@ public class HJ1 {
      * 输出描述：
      * 输出一个整数，表示输入字符串最后一个单词的长度。
      */
-    public static int function1(String input){
+    public static int Function1(String input){
         String[] strings=input.split(" ");
         return strings[strings.length-1].length();
     }
@@ -27,6 +27,6 @@ public class HJ1 {
             System.out.println("字符串长度大于5000");
             System.exit(1);
         }
-        System.out.println(function1(input));
+        System.out.println(Function1(input));
     }
 }
