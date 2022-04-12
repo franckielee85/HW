@@ -2,9 +2,7 @@ package pri.lee.HJ108;
 
 
 
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @author fuyao lee
@@ -55,7 +53,39 @@ public class Main {
             System.out.println( key + " " + treeMap.get(key));
         }
     }
-    public static void main(String[] args) {
 
+    /**
+     * 描述
+     * 输入一个 int 型整数，按照从右向左的阅读顺序，返回一个不含重复数字的新的整数。
+     * 保证输入的整数最后一位不是 0 。
+     *
+     * 数据范围： 1 \le n \le 10^{8} \1≤n≤10
+     * 8
+     *
+     * 输入描述：
+     * 输入一个int型整数
+     *
+     * 输出描述：
+     * 按照从右向左的阅读顺序，返回一个不含重复数字的新的整数
+     * 9876673
+     * 37689
+     */
+    public static void Function9(String input){
+        StringBuilder stringBuilder = new StringBuilder(input);
+        char[] charArray = stringBuilder.reverse().toString().toCharArray();
+        Set<Character> hashSet = new LinkedHashSet<>();
+        for (int i = 0; i < charArray.length; i++) {
+            if(charArray[charArray.length-1]=='0')
+                break;
+            hashSet.add(charArray[i]);
+        }
+        Iterator<Character> iterator = hashSet.iterator();
+        while (iterator.hasNext()){
+            System.out.print(iterator.next());
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Function9(scanner.nextLine());
     }
 }
